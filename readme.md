@@ -14,8 +14,8 @@ Você poderá iniciar o servidor de 2 maneiras:
 #### Com a interface gráfica
 Nesse formato, você utilizará uma interface em HTML para inserir os textos que o Watson irá traduzir. Para essa opção, utilize o comando:
 
-`npm start`
-
+`npm start`  
+*o servidor será iniciado na porta **8081***
 
 #### Apenas com o *hello world* disponibilizado pela [Node SDK](https://github.com/watson-developer-cloud/node-sdk)
 Nesse formato, os textos que o Watson irá traduzir estarão fixos no código-fonte. Para essa opção, utilize o comando:
