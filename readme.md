@@ -28,6 +28,6 @@ Nesse formato, os textos que o Watson irá traduzir estarão fixos no código-fo
 Este é apenas um hello world utilizando a API de Language Translator e Language Identificator fornecidas pelo Watson.
 
 ## Referências
-[Watson Developer Cloud - Language Translator](https://www.ibm.com/watson/developercloud/doc/language-translator/index.html)
-[Language Translator Demo](https://www.ibm.com/watson/developercloud/doc/language-translator/index.html)
+[Watson Developer Cloud - Language Translator](https://www.ibm.com/watson/developercloud/doc/language-translator/index.html)  
+[Language Translator Demo](https://www.ibm.com/watson/developercloud/doc/language-translator/index.html)  
 [Watson Node SDK](https://github.com/watson-developer-cloud/node-sdk)
