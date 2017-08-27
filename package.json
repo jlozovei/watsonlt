@@ -28,6 +28,7 @@
     "jquery": "^3.2.1",
     "morgan": "^1.8.2",
     "nodemon": "^1.11.0",
+    "toastr": "^2.1.2",
     "watson-developer-cloud": "^2.39.0"
   },
   "devDependencies": {

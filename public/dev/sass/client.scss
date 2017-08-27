@@ -6,6 +6,8 @@
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,600');
 @import '../../../node_modules/font-awesome/scss/font-awesome';
 
+@import '_toastr';
+
 
 *{ @include prefix(box-sizing, border-box, webkit moz ms o); font-size: 1rem; font-family: 'Titillium Web', sans-serif, Verdana; }
 
@@ -18,8 +20,9 @@ html, body{
 
 label{
 	font-weight: 600;
-	display: inline-block;
+	display: block;
 	margin-bottom: 10px;
+	text-align: left;
 }
 
 input, textarea, select{
@@ -58,6 +61,7 @@ button{
 	font-weight: 600;
 	font-size: 1.1rem;
 	text-align: center;
+	@include prefix(border-radius, 2px, webkit moz ms o);
 	@include transition(all ease-in-out 200ms);
 	background-color: $buttonBg;
 	border: 1px solid $buttonBorder;
@@ -80,6 +84,22 @@ h1{
 	color: $white;
 	line-height: 2.3rem;
 	padding: 10px;
+}
+
+a{
+	&.view-json{
+		color: $buttonBg;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 1.05em;
+		line-height: 1.5em;
+		cursor: pointer;
+
+		&:hover{
+			color: $buttonBorderHover;
+			text-decoration: underline;
+		}
+	}
 }
 
 .content{
@@ -115,14 +135,23 @@ h1{
 	.content-wrapper{
 		padding: 20px;
 
-		.text-translated{
+		.text-translated, .text-identified{
 			opacity: 0;
 			visibility: hidden;
+			text-align: center;
 			@include transition(all ease-in-out 350ms);
 
 			&.active{
 				opacity: 1;
 				visibility: visible;
+			}
+		}
+
+		.text-identified{
+			h4{
+				text-align: center;
+				font-size: 1.15em;
+				line-height: 2em;
 			}
 		}
 	}
@@ -131,10 +160,69 @@ h1{
 .tabbed-content{
 	opacity: 0;
 	visibility: hidden;
+	display: none;
 	@include transition(all ease-in-out 350ms);
+
+	&.display{ display: block; }
 
 	&.active{
 		opacity: 1;
 		visibility: visible;
+	}
+}
+
+.modal-overlay{
+	background-color: $overlay;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	visibility: hidden;
+	@include transition(all ease-in-out 300ms);
+	display: block;
+
+	&.visible{
+		opacity: 1;
+		visibility: visible;
+		overflow: auto;
+
+		.modal-container{
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	.modal-container{
+		position: relative;
+		top: 10vh;
+		background-color: $white;
+		padding: 20px;
+		@include prefix(border-radius, 2px, webkit moz ms o);
+		@include transition(all ease-in-out 300ms);
+		opacity: 0;
+		visibility: hidden;
+		width: 70%;
+		max-width: 900px;
+		margin: 0 auto 10vh;
+
+		.modal-fade-content{
+			display: none;
+
+			pre{
+				border: 1px solid $preBorder;
+				color: $text;
+				padding: 10px;
+				line-height: 1.2em;
+				font-family: monospace;
+				word-wrap: break-word;
+				white-space: pre-wrap;
+				@include prefix(border-radius, 2px, webkit moz ms o);
+			}
+		}
 	}
 }

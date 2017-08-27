@@ -10,15 +10,16 @@ let router = require('express').Router(),
 	});
 
 router.post('/', function (req, resp, next){
-	let {text, source, target} = req.body;
-	language_translator.translate({
-			text: text, source : source, target: target },
-		function (err, translation) {
-			if (err)
-				console.log('error:', err);
-			else
-				resp.status(200).send(translation);
-		});
+	console.log(req.body);
+	let {text} = req.body;
+	language_translator.identify({
+		text: text },
+	function (err, language) {
+		if (err)
+			console.log('error:', err);
+		else
+			resp.status(200).send(language);
+	});
 });
 
 

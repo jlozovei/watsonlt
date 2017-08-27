@@ -9,6 +9,7 @@ gulp.task('js:watch', function(){
 
 gulp.task('js', function(){
 	return gulp.src(['./node_modules/jquery/dist/jquery.js',
+				'./node_modules/toastr/build/toastr.js',
 				'./public/dev/js/*.js'])
 		.pipe(concat('client.min.js'))
 		.pipe(uglify())
