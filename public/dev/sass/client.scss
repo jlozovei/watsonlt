@@ -226,3 +226,21 @@ a{
 		}
 	}
 }
+
+.footer{
+	padding: 20px;
+	background-color: #f5f5f5;
+	border-top: 1px solid #e5e5e5;
+	text-align: center;
+
+	small{
+		font-weight: 600;
+		display: block;
+		line-height: 22px;
+
+		a{
+			color: $buttonBg;
+			font-size: inherit;
+		}
+	}
+}

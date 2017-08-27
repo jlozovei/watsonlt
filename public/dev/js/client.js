@@ -1,6 +1,10 @@
 'use strict';
 
 $(document).ready(function(){
+	footer();
+
+	$('select').trigger('change');
+
 	setTimeout(function(){
 		$('.content-tabs li:first-child').find('a').trigger('click');
 	}, 100);
@@ -53,6 +57,12 @@ $(document).ready(function(){
 		});
 	});
 });
+
+function footer(){
+	var year = new Date()
+	year = year.getFullYear();
+	$('.footer > small.cr').html("&copy; Developed by <a target='_blank' href='https://jlozovei.github.io/'>&lt;j&middot;lozovei &#47;&gt;</a> "+year);
+}
 
 function validateSelect(select){
 	$('select').not(select).find('option').attr('disabled', false);
