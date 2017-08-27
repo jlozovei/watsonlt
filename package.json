@@ -20,9 +20,14 @@
   },
   "homepage": "https://github.com/jlozovei/watsonlt#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "config": "^1.26.2",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
+    "morgan": "^1.8.2",
+    "nodemon": "^1.11.0",
     "watson-developer-cloud": "^2.39.0"
   },
   "devDependencies": {

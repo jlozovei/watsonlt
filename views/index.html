@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Watson Translator</title>
+	<link rel="stylesheet" type="text/css" href="dist/css/client.css" />
+	<link rel="icon" href="dist/img/favicon.png" />
+</head>
+<body>
+<h1>Watson Developer Cloud Hello World</h1>
+<div class="content">
+	<ul class="content-tabs clearfix">
+		<li><a data-tab="#translator"><i class="fa fa-language"></i> Tradutor</a></li>
+		<li><a data-tab="#identifier"><i class="fa fa-globe"></i> Identificador</a></li>
+	</ul>
+	<div class="content-wrapper clearfix">
+		<div id="translator" class="clearfix tabbed-content">
+			<div class="input-container">
+				<label for="textToTranslate">Texto para traduzir</label>
+				<textarea name="textToTranslate" id="textToTranslate" rows="3" placeholder="Insira o texto que você quer traduzir"></textarea>
+			</div>
+			<div class="input-container col-6 left">
+				<label for="languageIn">Selecione o idioma de entrada</label>
+				<select id="languageIn" name="languageIn">
+					<option value="en" class="english">Inglês</option>
+					<option value="fr" class="french">Francês</option>
+					<option value="es" class="spanish">Espanhol</option>
+					<option value="pt" class="portuguese">Português</option>
+					<option value="it" class="italian">Italiano</option>
+				</select>
+			</div>
+			<div class="input-container col-6 right">
+				<label for="languageOut">Selecione o idioma de saída</label>
+				<select id="languageOut" name="languageOut">
+					<option value="en" class="english">Inglês</option>
+					<option value="fr" class="french">Francês</option>
+					<option value="es" class="spanish">Espanhol</option>
+					<option value="pt" class="portuguese">Português</option>
+					<option value="it" class="italian">Italiano</option>
+				</select>
+			</div>
+			<div class="button-container">
+				<button id="translate">Traduzir</button>
+			</div>
+
+			<div class="clearfix text-translated">
+				<label for="textTranslated">Texto traduzido</label>
+				<textarea name="textTranslated" id="textTranslated" rows="3" placeholder="" disabled></textarea>
+			</div>
+		</div>
+		<div id="identifier" class="clearfix tabbed-content">
+
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="dist/js/client.min.js"></script>
+</body>
+</html>
