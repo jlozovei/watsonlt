@@ -4,8 +4,11 @@
   "description": "Este repositório contém um server em NodeJS que consulta serviços disponibilizados pela API do [IBM Watson](https://www.ibm.com/watson/) para tradução de textos e identificação de idiomas.  \r Esta branch contém um tutorial de como criar esse servidor, seguindo um passo a passo intuitivo e simples de seguir.",
   "main": "watson.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watson": "node watson.js",
+    "start": "nodemon ./bin/www",
+    "gulp": "gulp"
+  }
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jlozovei/watsonlt.git"

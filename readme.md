@@ -121,3 +121,37 @@ Enfim, indepentendemente se você usar a minha interface ou quiser criar/utiliza
 - criar/utilizar uma inteface para que o usuário possa inserir um texto para a tradução ou identificação do idioma;
 - passar essas informações para a rota correspondente (identify ou translate);
 - mostrar o resultado para o usuário.
+
+
+## Passo 5 - bin/www e npm scripts
+
+Vamos criamos um novo diretório no nosso projetto, *bin*, contendo um arquivo chamado *www* sem extensão. Esse arquivo será chamado pela linha de comando do node para dar ínicio ao nosos serviço - dentro do arquivo *www* estará o listener do nosso servidor HTTP. Todo esse comportamento deve sempre ficar isolado do restante da configuração do Express.  
+
+Para automatizar algumas tarefas vamos utilizar os scripts do NPM. Dentro do *package.json*, vamos configurar os seguintes scripts:
+
+- watson - quando quisermos que o node execute o arquivo *watson.js* em runtime;
+- start - o script que será chamado para iniciar nosso servidor;
+- gulp - se você está utilizando o gulp, esse script irá chamar a task default definida no seu *gulpfile.js*, para fazer a automação das tarefas definidas.
+
+Agora, sempre que você quiser chamar o arquivo *watson.js* no terminal irá inserir o comando:
+
+`npm run watson`
+
+E, para startar o servidor:
+
+`npm start`
+
+Utilizando os scripts do NPM conseguimos aumentar a nossa produtividade e não precisamos ficar fazend esforço para lembrar de cabeça esses scripts -  o Node faz isso pela gente!  
+Você também pode criar scripts para testar toda sua aplicação, desde rotas, métodos e tudo mais. Para isso, indico 2 super dependências de fácil uso e grande alcance:
+
+- [istanbul](https://github.com/gotwarlost/istanbul)
+- [mocha](https://mochajs.org/)
+
+
+## Algumas considerações
+
+Sempre que você utilizar o NPM como gerenciador de pacotes/dependências da sua aplicação - seja ela em Node ou em qualquer outra linguagem - será gerada uma pasta absurdamente grande no seu projeto, a *node_modules*.  
+
+Dentro dela estão todos os arquivos utilizados pelas dependências que você instala, então é importante que você não mexa em nada lá - até porque parece um labirinto!  
+
+É sempre bom ignorar essa pasta em projetos que utilizam git (através do arquivo *.gitignore*). Se você precisa fazer alguma modificação em um módulo que fica lá dentro, tente fazer isso sobrescrevendo esse módulo fora da *node_modules*, ou entre em contato com o(s) desenvolvedor(es) desse módulo.
