@@ -1,0 +1,246 @@
+@import './utils/_mixins';
+@import './utils/_colors';
+
+@import './utils/_reset';
+
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,600');
+@import '../../../node_modules/font-awesome/scss/font-awesome';
+
+@import '_toastr';
+
+
+*{ @include prefix(box-sizing, border-box, webkit moz ms o); font-size: 1rem; font-family: 'Titillium Web', sans-serif, Verdana; }
+
+
+html, body{
+	background-color: $bg;
+	min-height: 100%;
+  	height: 100%;
+}
+
+label{
+	font-weight: 600;
+	display: block;
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+input, textarea, select{
+	border: 1px solid $inputBorder;
+	background-color: $white;
+	padding: 6px;
+	width: 100%;
+	resize: none;
+	@include prefix(border-radius, 2px, webkit moz ms o);
+	@include transition(all ease-in-out 200ms);
+
+	&:focus{ border-color: $inputBorderFocus; }
+}
+
+select{
+	background-image: url(../img/select.png);
+	background-color: $white;
+	background-position: center right;
+	background-repeat: no-repeat;
+}
+
+.input-container, .button-container{ display: block; margin-bottom: 20px; }
+
+.button-container{ text-align: right; }
+
+.col-6{
+	width: 50%;
+	float: left;
+	
+	&.left{ padding: 0 15px 0 0; }
+	&.right{ padding: 0 0 0 15px; }
+}
+
+button{
+	display: inline-block;
+	font-weight: 600;
+	font-size: 1.1rem;
+	text-align: center;
+	@include prefix(border-radius, 2px, webkit moz ms o);
+	@include transition(all ease-in-out 200ms);
+	background-color: $buttonBg;
+	border: 1px solid $buttonBorder;
+	color: $white;
+	padding: 8px 16px;
+	cursor: pointer;
+
+	&.disabled{ opacity: .5; pointer-events: none; }
+
+	&:hover{
+		background-color: $buttonBgHover;
+		border-color: $buttonBorderHover;
+	}
+}
+
+h1{
+	text-align: center;
+	font-size: 2rem;
+	background-color: $text;
+	color: $white;
+	line-height: 2.3rem;
+	padding: 10px;
+}
+
+a{
+	&.view-json{
+		color: $buttonBg;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 1.05em;
+		line-height: 1.5em;
+		cursor: pointer;
+
+		&:hover{
+			color: $buttonBorderHover;
+			text-decoration: underline;
+		}
+	}
+}
+
+.content{
+	.content-tabs{
+		-webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+		-moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+		-ms-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+		-o-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+
+		li{
+			display: block;
+			float: left;
+			width: 50%;
+			text-align: center;
+
+			a{
+				font-size: 1.12rem;
+				padding: 20px;
+				display: block;
+				cursor: pointer;
+				background-color: $buttonBg;
+				color: $white;
+				@include transition(all ease-in-out 200ms);
+				border-bottom: 4px solid transparent;
+
+				&:hover{ background-color: $buttonBgHover; }
+				&.active{ background-color: $buttonBorderHover; border-color: $white; }
+			}
+		}
+	}
+
+	.content-wrapper{
+		padding: 20px;
+
+		.text-translated, .text-identified{
+			opacity: 0;
+			visibility: hidden;
+			text-align: center;
+			@include transition(all ease-in-out 350ms);
+
+			&.active{
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
+		.text-identified{
+			h4{
+				text-align: center;
+				font-size: 1.15em;
+				line-height: 2em;
+			}
+		}
+	}
+}
+
+.tabbed-content{
+	opacity: 0;
+	visibility: hidden;
+	display: none;
+	@include transition(all ease-in-out 350ms);
+
+	&.display{ display: block; }
+
+	&.active{
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.modal-overlay{
+	background-color: $overlay;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	visibility: hidden;
+	@include transition(all ease-in-out 300ms);
+	display: block;
+
+	&.visible{
+		opacity: 1;
+		visibility: visible;
+		overflow: auto;
+
+		.modal-container{
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	.modal-container{
+		position: relative;
+		top: 10vh;
+		background-color: $white;
+		padding: 20px;
+		@include prefix(border-radius, 2px, webkit moz ms o);
+		@include transition(all ease-in-out 300ms);
+		opacity: 0;
+		visibility: hidden;
+		width: 70%;
+		max-width: 900px;
+		margin: 0 auto 10vh;
+
+		.modal-fade-content{
+			display: none;
+
+			pre{
+				border: 1px solid $preBorder;
+				color: $text;
+				padding: 10px;
+				line-height: 1.2em;
+				font-family: monospace;
+				word-wrap: break-word;
+				white-space: pre-wrap;
+				@include prefix(border-radius, 2px, webkit moz ms o);
+			}
+		}
+	}
+}
+
+.footer{
+	padding: 20px;
+	background-color: #f5f5f5;
+	border-top: 1px solid #e5e5e5;
+	text-align: center;
+
+	small{
+		font-weight: 600;
+		display: block;
+		line-height: 22px;
+
+		a{
+			color: $buttonBg;
+			font-size: inherit;
+		}
+	}
+}

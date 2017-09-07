@@ -1,0 +1,20 @@
+@mixin font($size){
+    font-size: $size + px; //fallback for old browsers
+    font-size: (0.0625 * $size) + em;
+}
+
+@mixin transition($args) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin prefix($property, $value, $prefixes: ()) {
+    @each $prefix in $prefixes {
+        #{'-' + $prefix + '-' + $property}: $value;
+    }
+ 
+    #{$property}: $value;
+}

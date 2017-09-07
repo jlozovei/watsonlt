@@ -93,3 +93,31 @@ Dentro das nossas rotas de API, criaremos 2 arquivos - *identify.js* e *translat
 Os códigos utilizados nesses arquivos são similares aos do hello world, com algumas mudanças - os dados agora serão passados de forma dinâmica, dando a liberdade para o usuário escolher o texto e os idiomas de entrada/saída para as traduções.  
 
 *spoiler - na view, vamos utilizar requests Ajax para chegar nas rotas*
+
+
+## Passo 4 - Views
+
+Vou passar bem rápido por esse passo, mas apenas para explicar o que eu fiz:  
+
+Criei uma interface na unha (viva o front-end!) utilizando o template engine do [EJS](http://ejs.co/) (inclusive configuramos isso no app.js - você poderá escolher outro de acordo com a vontade do seu coração, se quiser), e também o [GulpJS](https://gulpjs.com/), que é um automador de tarefas.
+
+De maneira simples - com o EJS (ou qualquer outro template engine) construímos o markup utilizado e com o Gulp (ou qualquer outro automador) vamos minificar todos os arquivos CSS e JS que utilizamos na view para otimização de performance.
+
+O Gulp é uma plataforma, e dentro dela você pode usar vários módulos - eu utiilzei o *gulp-sass* (traduzir e compliar [sass](http://sass-lang.com/) para css), *gulp-concat* (concatenar todos os arquivos js) e *gulp-uglify* (minificar todos os arquivos js).
+
+Além dessas dependências, também adicionei o [jQuery](https://jquery.com/) (manipulação de DOM e requisições Ajax), [FontAwesome](http://fontawesome.io/) (framework para ícones) e o [toastr](http://codeseven.github.io/toastr/) (alertas bonitinhos).
+
+Nesse ponto é também importante ressaltar a classificação entre dependências que temos no NPM - as *dependencies* e as *devDependencies*:
+
+- dependencies: todas as dependências que serão utilizadas **em produção** pela sua aplicação (ex.: express, jquery, nodemon, sdk do Watson);
+- devDependencies: todas as dependências que serão utilizadas **apenas em desenvolvimento** da sua aplicação (ex.: gulp, não precisamos dele em produção).
+
+Você faz essa diferenciação de dependências no NPM durante a instalação delas no seu projeto, utilizando
+
+`npm install --save` e `npm install --save-dev` 
+
+Enfim, indepentendemente se você usar a minha interface ou quiser criar/utilizar qualquer outra, é importante ressaltar que nesse passo você precisa:
+
+- criar/utilizar uma inteface para que o usuário possa inserir um texto para a tradução ou identificação do idioma;
+- passar essas informações para a rota correspondente (identify ou translate);
+- mostrar o resultado para o usuário.
