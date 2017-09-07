@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/jlozovei/watsonlt/issues"
   },
-  "homepage": "https://github.com/jlozovei/watsonlt#readme"
+  "homepage": "https://github.com/jlozovei/watsonlt#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "config": "^1.26.2",
+    "express": "^4.15.4",
+    "morgan": "^1.8.2",
+    "nodemon": "^1.12.0",
+    "watson-developer-cloud": "^2.39.0"
+  }
 }

@@ -52,3 +52,21 @@ No lugar de *nome_do_pacote*, você irá digitar o nome das bibliotecas acima.
 Você pode instalar cada biblioteca individualmente, ou todas juntas. O comando ficará mais ou menos assim:
 
 `npm install express nodemon body-parser morgan config watson-developer-cloud --save`
+
+## Passo 2 - Utilizando o hello world do Watson
+
+Com todas as dependências instaladas, podemos agora começar a criar a estrutura do nosso projeto.  
+
+A primeira pasta que iremos criar no nosso projeto será chamada *config*, e dentro dela teremos um arquivo, *default.json*. Dentro dele iremos armazenar as nossas credenciais geradas pelo console do Bluemix, durante a criação do serviço de tradução de idiomas.
+
+Feito isso, iremos agora entrar na [documentação oficial do Github do Watson Developer Cloud para Node, na sessão do Language Translator](https://github.com/watson-developer-cloud/node-sdk#language-translator), e pegaremos de exemplo o código hello world oferecido.
+Com o código em mãos, iremos criar um arquivo em nosso projeto, *watson.js*.
+
+Dentro do *watson.js*, iremos chamar o *config* para podermos utilizar as nossas credenciais dentro do serviço.  
+Note que, no lugar de `<username>` e `<password>`, iremos mudar para `config.get('username')` e `config.get('password')`, pegando de forma dinâmica as nossas credenciais.
+
+Você poderá executar esse código utilizando o runtime do Node. Para isso, no terminal, insira o comando:
+
+`node watson.js`
+
+Se tudo ocorreu bem, no terminal você verá o resultado da operação do código de hello world - meus parabéns!
