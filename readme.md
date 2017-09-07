@@ -15,6 +15,7 @@ Esta branch contém um tutorial de como criar esse servidor, seguindo um passo a
 
 Você pode utilizar qualquer IDE ou editor de texto para criar os códigos. Eu gosto muito do [Sublime Text](https://www.sublimetext.com/3) e da [WebStorm](https://www.jetbrains.com/webstorm/), mas você pode criar tudo até mesmo com o notepad.
 
+
 ## Passo 1 - Iniciando o projeto em Node e instalando dependências
 
 Após você ter criado sua conta no IBM Bluemix, ter criado o serviço de Language Translator utilizando a API do Watson e ter instalado o NodeJS no seu computador, crie uma pasta qualquer e inicie um terminal dentro dela.
@@ -53,6 +54,7 @@ Você pode instalar cada biblioteca individualmente, ou todas juntas. O comando 
 
 `npm install express nodemon body-parser morgan config watson-developer-cloud --save`
 
+
 ## Passo 2 - Utilizando o hello world do Watson
 
 Com todas as dependências instaladas, podemos agora começar a criar a estrutura do nosso projeto.  
@@ -70,3 +72,24 @@ Você poderá executar esse código utilizando o runtime do Node. Para isso, no 
 `node watson.js`
 
 Se tudo ocorreu bem, no terminal você verá o resultado da operação do código de hello world - meus parabéns!
+
+
+## Passo 3 - Botando a mão na massa de verdade
+
+Já aprendemos o básico de Node, já fizemos um hello world bacana - agora tá na hora de botar pra quebrar!  
+
+### Passo 3.1 - app.js
+Vamos criar um nodo arquivo, *app.js*, que será o coração da nossa aplicação. Dentro dele iremos definir as rotas, uma pasta pública para arquivos estáticos (CSS e JS utilizados pelas views da aplicação), qual será o template engine utilizado pelas views, enfim, tudo praticamente.
+
+Ele é arquivo relativamente pequeno, mas, sem ele tudo será um **caos**.
+
+### Passo 3.2 - rotas
+Também vamos criar um novo diretório, *routes* - dentro dele, iremos dividir as rotas em 2 grandes setores, 1 para a API e outro para a view.  
+Nesse diretório, teremos outras 2 pastas - *api* e *views*, além de um arquivo *index.js* que irá fazer o gerenciamento da chamada das rotas para a API e para as views.
+
+Por hora, vamos fazer toda a lógica do serviço do Watson na própria rota - como é um projeto simples, não há a necessidade de abstrair para uma controller ou algo do tipo, mas se você quiser, pode tentar - e digo que não é difícil!
+
+Dentro das nossas rotas de API, criaremos 2 arquivos - *identify.js* e *translate.js*, que irão fazer a comunicação com os serviços de identificação e tradução dos idiomas, respectivamente.  
+Os códigos utilizados nesses arquivos são similares aos do hello world, com algumas mudanças - os dados agora serão passados de forma dinâmica, dando a liberdade para o usuário escolher o texto e os idiomas de entrada/saída para as traduções.  
+
+*spoiler - na view, vamos utilizar requests Ajax para chegar nas rotas*
