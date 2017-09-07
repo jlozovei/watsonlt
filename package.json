@@ -1,40 +1,19 @@
 {
   "name": "watsonlt",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Este repositório contém um server em NodeJS que consulta serviços disponibilizados pela API do [IBM Watson](https://www.ibm.com/watson/) para tradução de textos e identificação de idiomas.  \r Esta branch contém um tutorial de como criar esse servidor, seguindo um passo a passo intuitivo e simples de seguir.",
+  "main": "watson.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watson": "node watson.js",
-    "start": "nodemon ./bin/www",
-    "gulp": "gulp"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jlozovei/watsonlt.git"
   },
-  "author": "",
+  "author": "Julio Pavani Lozovei",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jlozovei/watsonlt/issues"
   },
-  "homepage": "https://github.com/jlozovei/watsonlt#readme",
-  "dependencies": {
-    "body-parser": "^1.17.2",
-    "config": "^1.26.2",
-    "ejs": "^2.5.7",
-    "express": "^4.15.4",
-    "font-awesome": "^4.7.0",
-    "jquery": "^3.2.1",
-    "morgan": "^1.8.2",
-    "nodemon": "^1.11.0",
-    "toastr": "^2.1.2",
-    "watson-developer-cloud": "^2.39.0"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0"
-  }
+  "homepage": "https://github.com/jlozovei/watsonlt#readme"
 }
