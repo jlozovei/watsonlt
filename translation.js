@@ -1,9 +1,9 @@
 let LanguageTranslatorV2 = require('watson-developer-cloud/language-translator/v2'),
     config = require('config'),
     language_translator = new LanguageTranslatorV2({
-        username: config.get('username'),
-        password: config.get('password'),
-        url: config.get('url')
+        username: config.get('translation').get('username'),
+        password: config.get('translation').get('password'),
+        url: config.get('translation').get('url')
     });
 
 language_translator.translate({

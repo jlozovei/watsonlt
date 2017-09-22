@@ -25,10 +25,9 @@ Nesse formato, os textos que o Watson irá traduzir estarão fixos no código-fo
 
 ## Considerações
 
-Este é apenas um hello world utilizando a API de Language Translator e Language Identificator fornecidas pelo Watson.
+Este é apenas um trabalho prático utilizando as APIs fornecidas pelo Watson e pela SDK em Node.
 
-## Referências
-[Watson Developer Cloud - Language Translator](https://www.ibm.com/watson/developercloud/doc/language-translator/index.html)  
+## Referências  
 [Language Translator Demo](https://console.bluemix.net/docs/services/language-translator/index.html)  
 [Tone Analyzer Demo](https://console.bluemix.net/docs/services/tone-analyzer/index.html)  
 [Watson Node SDK](https://github.com/watson-developer-cloud/node-sdk)
