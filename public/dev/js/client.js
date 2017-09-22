@@ -370,8 +370,8 @@ function nlu(obj){
 						for(var a = 0, len = resp.metadata.authors.length; a < len; a++){
 							var author = resp.metadata.authors[a];
 							authors += author.name;
-							if (len - a > 1 && a > 0) {
-								authors += ',';
+							if (len - a > 1) {
+								authors += ', ';
 							}
 						}
 
