@@ -1,6 +1,6 @@
-# Watson Developer Cloud - Tradutor e Identificador
+# Watson Developer Cloud - APIs demo
 
-Este repositório contém um server em NodeJS que consulta serviços disponibilizados pela API do [IBM Watson](https://www.ibm.com/watson/) para tradução de textos e identificação de idiomas.
+Este repositório contém um server em NodeJS que consulta serviços disponibilizados pela API do [IBM Watson](https://www.ibm.com/watson/) para tradução de textos e identificação de idiomas, identificação de tons.
 
 
 ## Como Usar?
@@ -29,5 +29,6 @@ Este é apenas um hello world utilizando a API de Language Translator e Language
 
 ## Referências
 [Watson Developer Cloud - Language Translator](https://www.ibm.com/watson/developercloud/doc/language-translator/index.html)  
-[Language Translator Demo](https://www.ibm.com/watson/developercloud/doc/language-translator/index.html)  
+[Language Translator Demo](https://console.bluemix.net/docs/services/language-translator/index.html)  
+[Tone Analyzer Demo](https://console.bluemix.net/docs/services/tone-analyzer/index.html)  
 [Watson Node SDK](https://github.com/watson-developer-cloud/node-sdk)
