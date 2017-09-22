@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Julio Pavani Lozovei" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="googlebot" content="noindex,nofollow" />
+    <meta name="theme-color" content="#4a4b4c" />
+    <title>WDC - NLU</title>
+    <link rel="stylesheet" type="text/css" href="dist/css/client.css" />
+    <link rel="icon" href="dist/img/favicon.png" />
+</head>
+<body>
+<div class="header">
+    <a title="Voltar para Home" href="/" class="home-navigation"><i class="fa fa-home"></i></a>
+    <h1>Watson Developer Cloud - NLU</h1>
+</div>
+
+<div class="content">
+    <ul class="content-tabs clearfix">
+        <li><a data-tab="#text"><i class="fa fa-font"></i> Texto</a></li>
+        <li><a data-tab="#url"><i class="fa fa-link"></i> URL (HTML)</a></li>
+    </ul>
+    <div class="content-wrapper clearfix">
+        <div id="text" class="clearfix tabbed-content">
+            <div class="input-container">
+                <label for="textToNLU">Texto para análise</label>
+                <textarea name="textToNLU" id="textToNLU" rows="3" placeholder="Insira o texto que você quer analisar"></textarea>
+            </div>
+            <div class="button-container">
+                <button id="textNLU">Analisar</button>
+            </div>
+
+        </div>
+        <div id="url" class="clearfix tabbed-content">
+            <div class="input-container">
+                <label for="urlToNLU">URL para análise</label>
+                <textarea name="urlToNLU" id="urlToNLU" rows="3" placeholder="Insira a URL que você quer analisar"></textarea>
+            </div>
+            <div class="button-container">
+                <button id="urlNLU">Analisar</button>
+            </div>
+        </div>
+
+        <div class="clearfix text-nlu-analyzed">
+            <label>Resultado da análise</label>
+            <div class="categories">
+                <label>Categorias:</label>
+            </div>
+            <div class="entities">
+                <label>Entidades:</label>
+            </div>
+            <div class="metadata">
+                <label>Metadata:</label>
+            </div>
+            <div class="keywords">
+                <label>Palavras-chave:</label>
+            </div>
+            <div class="relations">
+                <label>Relações:</label>
+            </div>
+            <div class="sentiment">
+                <label>Sentimentos:</label>
+            </div>
+            <div class="info">
+                <label>Informações adicionais da análise:</label>
+            </div>
+
+            <a class="view-json" data-target="nlu">visualizar JSON</a>
+        </div>
+    </div>
+
+    <div class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-fade-content nlu">
+                <pre></pre>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <small class="cr"></small>
+    </footer>
+</div>
+<script type="text/javascript" src="dist/js/client.min.js"></script>
+</body>
+</html>

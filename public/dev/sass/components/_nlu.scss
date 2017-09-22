@@ -1,0 +1,20 @@
+.text-nlu-analyzed{
+    p{
+        margin-bottom: 10px;
+        text-align: left;
+        position: relative;
+        padding-left: 15px;
+
+        &:before{
+            font-family: 'FontAwesome';
+            content: '\f101';
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            color: $buttonBgHover;
+        }
+
+        .highlight{ color: $buttonBgHover; font-weight: 600; }
+    }
+}

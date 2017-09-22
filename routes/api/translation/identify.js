@@ -11,11 +11,10 @@ let router = require('express').Router(),
 
 router.post('/', function (req, resp, next){
 	let {text} = req.body;
-	language_translator.identify({
-		text: text },
+	language_translator.identify({ text: text },
 	function (err, language) {
 		if (err)
-			console.log('error:', err);
+			resp.status(400).send({error: err});
 		else
 			resp.status(200).send(language);
 	});

@@ -14,7 +14,7 @@ router.post('/', function (req, resp, next){
 	language_translator.translate({ text: text, source : source, target: target },
 	function (err, translation) {
 		if (err)
-			console.log('error:', err);
+			resp.status(400).send({error: err});
 		else
 			resp.status(200).send(translation);
 	});

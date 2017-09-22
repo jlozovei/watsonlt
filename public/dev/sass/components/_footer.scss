@@ -9,9 +9,15 @@
         display: block;
         line-height: 22px;
 
+        .heart{
+            color: #ED1B24;
+            font-size: 12px;
+        }
+
         a{
             color: $buttonBg;
             font-size: inherit;
+            text-decoration: none;
         }
     }
 }

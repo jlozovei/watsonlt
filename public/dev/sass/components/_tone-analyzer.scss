@@ -2,5 +2,8 @@
     p{
         margin-bottom: 10px;
         text-align: left;
+        position: relative;
+
+        .highlight{ color: $buttonBgHover; font-weight: 600; }
     }
 }

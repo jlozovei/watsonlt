@@ -12,7 +12,7 @@ language_translator.translate({
         if (err)
             console.log('error:', err);
         else
-            console.log(JSON.stringify(translation, null, 2));
+            console.log(JSON.stringify(translation, null, 4));
 });
 
 language_translator.identify({
@@ -21,5 +21,5 @@ language_translator.identify({
     if (err)
         console.log('error:', err);
     else
-        console.log(JSON.stringify(language, null, 2));
+        console.log(JSON.stringify(language, null, 4));
 });

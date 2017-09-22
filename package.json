@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "translation": "node translation.js",
     "tone": "node tone.js",
+    "nlu": "node nlu.js",
     "start": "nodemon ./bin/www",
     "gulp": "gulp"
   },
@@ -27,6 +28,7 @@
     "express": "^4.15.4",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
+    "jquery-dateformat": "^1.0.3",
     "morgan": "^1.8.2",
     "nodemon": "^1.11.0",
     "toastr": "^2.1.2",

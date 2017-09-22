@@ -1,0 +1,29 @@
+A IBM tem investido pesado nos últimos anos em inteligência artificial, deep learning e supercomputadores. O resultado mais recente dessa mistura é o Watson, uma plataforma que surpreende a cada dia pelas funcionalidades.
+O TecMundo acompanhou um painel da empresa durante o evento Geek City, realizado em Curitiba entre os dias 1º e 3 de setembro. Na apresentação,a responsável pelo setor de soluções cognitivas da IBM na América Latina, Jeni Shih, explicou o que é e para que pode servir o Watson a um público que talvez não esteja acostumado com essas inovações.
+Em seguida, Jeni até “chamou” o Watson ao palco — ou seja, tirou o celular do bolso. Conversando em tempo real com uma das representações de voz da plataforma (uma voz feminina chamada Isabela), ela mostrou alguns exemplos de como essa tecnologia já atua aqui no país. A executiva então apresentou casos de sucesso de aplicações reais que a inteligência artificial já faz em território brasileiro, atuando em áreas bem diferentes. A seguir, conheça algumas delas.
+
+1. Assistente pessoal via comandos de voz
+Você provavelmente já está acostumado a usar serviços como Siri, Cortana ou Google Assistente para navegar ou fazer perguntas simples. Uma das APIs do Watson também permite que ele converse com qualquer pessoa usando diferentes vozes, incluindo o português do Brasil.
+
+
+O aplicativo se conecta com a base de conhecimento do Watson na nuvem e por informações anteriormente carregadas no sistema. Assim, ele faz piadas que se encaixam bem na voz, que é bem articulada. No caso de Curitiba, ela incorporou rapidamente o “daí” no meio de frases e chamou a plateia de “piá”, termo usado para “menino” na região.
+
+2. Auxílio em hospitais
+A IBM fechou parceria com o Hospital Mãe de Deus, em Porto Alegre, para utilizar a plataforma de reconhecimento visual do Watson no tratamento de câncer.
+
+Em resumo, a plataforma recebe dados e imagens de exames de todos os pacientes para apontar tratamentos individualizados e otimizados para cada caso. Esse é o primeiro hospital da América Latina a fazer algo parecido e mostra todo o potencial que a tecnologia traz na área da saúde.
+“Mais do que ensinar para o Watson, o nosso objetivo é explorar e mostrar o que ele tem condições de fazer”, explica Jeni.
+
+3. Reconhecimento visual
+Uma das criações envolvendo o supercomputador é o Watson Visual Recognition. Basicamente, trata-se de um “olhar virtual” que analisa imagens e tenta “adivinhar” o que está na lente da câmera de um smartphone. Primeiro, ele precisa receber imagens e vídeos de determinado tema para catalogar cada informação e aprender a identificar padrões.
+
+A demonstração foi feita ao vivo no palco do Geek City; o cosplay de Coringa foi reconhecido com sucesso!
+
+Um dos casos apresentados envolveu a ida da equipe do Jovem Nerd até a San Diego Comic-Con. Lá, o Watson “adivinhou” quais eram os personagens representados por cosplayers em fotos tiradas e avaliadas na hora após “aprender” quem é quem por meio de fotos e clipes.
+Segundo Jeni, o Watson é como se fosse uma criança que está recebendo informações — e essa seria a beleza dessa tecnologia.
+
+4. Inclusão na cultura
+A IBM fez uma exposição interativa na Pinacoteca, em São Paulo, para incentivar visitas a museus. Na ação, utilizando o Watson, visitantes podiam “conversar” com as obras de arte usando fones de ouvido e fazer perguntas bem variadas. Ela foi batizada de "Voz da Arte".
+
+Os questionamentos variavam desde dados a respeito dos quadros até reflexões menos óbvias. Um dos objetivos é trazer pessoas de todas as idades que evitavam museus ou nunca tiveram a oportunidade de apreciar exposições.
+“Não é que o Watson é o futuro. Isso está aqui hoje”, afirmou Jeni ao fim da apresentação do painel. E alguém duvida?
