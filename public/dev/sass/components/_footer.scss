@@ -18,6 +18,8 @@
             color: $buttonBg;
             font-size: inherit;
             text-decoration: none;
+
+            &.github{ color: $black; }
         }
     }
 }
