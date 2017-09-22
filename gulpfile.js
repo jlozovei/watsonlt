@@ -4,13 +4,13 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify');
 
 gulp.task('js:watch', function(){
-	gulp.watch('./public/dev/js/*.js', ['js']);
+	gulp.watch('./public/dev/js/client.js', ['js']);
 });
 
 gulp.task('js', function(){
 	return gulp.src(['./node_modules/jquery/dist/jquery.js',
-				'./node_modules/toastr/build/toastr.js',
-				'./public/dev/js/*.js'])
+				'./node_modules/toastr/build/toastr.min.js',
+				'./public/dev/js/client.js'])
 		.pipe(concat('client.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('./public/dist/js'))

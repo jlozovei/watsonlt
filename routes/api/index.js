@@ -1,9 +1,9 @@
 'use strict';
 
-let express = require('express'),
-	router = express.Router();
+let router = require('express').Router();
 
-router.use('/translate', require("./translate"));
-router.use('/identify', require("./identify"));
+router.use('/translation', require("./translation/index"));
+router.use('/tone', require("./tone/index"));
+router.use('/nlu', require("./nlu/index"));
 
 module.exports = router;

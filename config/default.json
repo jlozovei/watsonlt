@@ -1,5 +1,17 @@
 {
-  "url": "https://gateway.watsonplatform.net/language-translator/api/",
-  "username": "b4d1253c-6e71-4c78-8b8a-d8ab1b706816",
-  "password": "OYRmDzxosw1V"
+  "translation": {
+    "url": "https://gateway.watsonplatform.net/language-translator/api/",
+    "username": "b4d1253c-6e71-4c78-8b8a-d8ab1b706816",
+    "password": "OYRmDzxosw1V"
+  },
+  "tone": {
+    "url": "https://gateway.watsonplatform.net/tone-analyzer/api",
+    "username": "8c6f0520-9265-4279-99f7-9d75c85c76ce",
+    "password": "Oy2gDT2meoVw"
+  },
+  "nlu": {
+    "url": "https://gateway.watsonplatform.net/natural-language-understanding/api",
+    "username": "55392497-4272-4425-b467-ac8725109116",
+    "password": "NPTZGE7CMrPP"
+  }
 }

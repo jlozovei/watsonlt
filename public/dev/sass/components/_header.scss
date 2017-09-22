@@ -1,0 +1,19 @@
+.header{
+    background-color: $text;
+
+    h1{
+        text-align: center;
+        font-size: 2rem;
+        color: $white;
+        line-height: 2.3rem;
+        padding: 10px 10px 10px 60px;
+    }
+
+    .home-navigation{
+        position: absolute;
+        left: 10px;
+        @include font(30);
+        color: $white;
+        top: 5px;
+    }
+}

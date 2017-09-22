@@ -1,0 +1,16 @@
+.col-3{
+    width: 33.3%;
+    float: left;
+    padding: 0 15px;
+
+    &.left{ padding: 0 15px 0 0; }
+    &.right{ padding: 0 0 0 15px; }
+}
+
+.col-6{
+    width: 50%;
+    float: left;
+
+    &.left{ padding: 0 15px 0 0; }
+    &.right{ padding: 0 0 0 15px; }
+}

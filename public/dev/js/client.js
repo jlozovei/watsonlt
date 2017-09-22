@@ -56,6 +56,20 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+	$('#toneAnalyzer').click(function(){
+		if($('#textToTone').val() != ''){
+			$(this).addClass('disabled').html('<i class="fa fa-spinner fa-spin fa-fw"></i>');
+			tone({
+				data: {
+					text: $('#textToTone').val()
+				}
+			});
+		}else{
+			toastr.error('Insira um texto por favor');
+			$('#textToTone').focus();
+		}
+	})
 });
 
 function footer(){
@@ -69,7 +83,7 @@ function validateSelect(select){
 	$('select').not(select).find('option[value="'+select.val()+'"]').attr('disabled', true);
 }
 
-var requestTranslate = null, requestIdentify = null;
+var requestTranslate = null, requestIdentify = null, requestTone = null;
 
 function translate(obj){
 	var service = function(obj){
@@ -79,7 +93,7 @@ function translate(obj){
 
 		requestTranslate = jQuery.ajax({
 			type: 'POST',
-			url: '/api/translate',
+			url: '/api/translation/translate',
 			data: JSON.stringify(obj.data),
 			dataType: 'json',
 			contentType: 'application/json',
@@ -118,7 +132,7 @@ function identify(obj){
 
 		requestIdentify = jQuery.ajax({
 			type: 'POST',
-			url: '/api/identify',
+			url: '/api/translation/identify',
 			data: JSON.stringify(obj.data),
 			dataType: 'json',
 			contentType: 'application/json',
@@ -141,6 +155,80 @@ function identify(obj){
 				toastr.error('Opsss... Algo de errado aconteceu, por favor tente novamente');
 				$('#identify').html('Identificar').removeClass('disabled');
 				requestIdentify = null;
+			}
+		});
+
+		return requestIdentify;
+	}
+
+
+	service(obj);
+}
+
+function tone(obj){
+	var service = function(obj){
+		if(requestTone != null){
+			requestTone.abort();
+		}
+
+		requestTone = jQuery.ajax({
+			type: 'POST',
+			url: '/api/tone/',
+			data: JSON.stringify(obj.data),
+			dataType: 'json',
+			contentType: 'application/json',
+			beforeSend: function(){
+				$('.tone-analyzed').find('.emotion_tone, .social_tone, .language_tone').empty();
+				$('.modal-container .modal-fade-content.tone > pre').html('');
+			},
+			success: function(resp){
+				var emotions = '', language = '', social = '';
+				if(resp && resp.document_tone){
+					var tones = resp.document_tone,
+						toneCategories = tones.tone_categories;
+
+					if(toneCategories && toneCategories.length > 0){
+						for(var i = 0, len = toneCategories.length; i < len; i++){
+							var toneCategory = toneCategories[i];
+
+							if(toneCategory.category_id == 'emotion_tone'){
+								for(var t = 0, tLen = toneCategory.tones.length; t < tLen; t++){
+									var tone = toneCategory.tones[t];
+									emotions += '<p>'+tone.tone_name+' - '+tone.score.toFixed(2)+'%</p>';
+								}
+
+								$('.tone-analyzed .emotion_tone').append(emotions);
+							}
+
+							if(toneCategory.category_id == 'language_tone'){
+								for(var t = 0, tLen = toneCategory.tones.length; t < tLen; t++){
+									var tone = toneCategory.tones[t];
+									language += '<p>'+tone.tone_name+' - '+tone.score.toFixed(2)+'%</p>';
+								}
+
+								$('.tone-analyzed .language_tone').append(language);
+							}
+
+							if(toneCategory.category_id == 'social_tone'){
+								for(var t = 0, tLen = toneCategory.tones.length; t < tLen; t++){
+									var tone = toneCategory.tones[t];
+									social += '<p>'+tone.tone_name+' - '+tone.score.toFixed(2)+'%</p>';
+								}
+
+								$('.tone-analyzed .social_tone').append(social);
+							}
+						}
+					}
+
+					$('.tone-analyzed').addClass('active');
+					$('.modal-container .modal-fade-content.tone > pre').html(JSON.stringify(resp.document_tone));
+					$('#toneAnalyzer').html('Analisar').removeClass('disabled');
+				}
+			},
+			error: function(){
+				toastr.error('Opsss... Algo de errado aconteceu, por favor tente novamente');
+				$('#identify').html('Identificar').removeClass('disabled');
+				requestTone = null;
 			}
 		});
 

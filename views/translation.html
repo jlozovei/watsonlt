@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Julio Pavani Lozovei" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="googlebot" content="noindex,nofollow" />
+    <meta name="theme-color" content="#4a4b4c" />
+    <title>WDC - Translator e Identificator</title>
+    <link rel="stylesheet" type="text/css" href="dist/css/client.css" />
+    <link rel="icon" href="dist/img/favicon.png" />
+</head>
+<body>
+<div class="header">
+    <a title="Voltar para Home" href="/" class="home-navigation"><i class="fa fa-home"></i></a>
+    <h1>Watson Developer Cloud - Translator e Identificator</h1>
+</div>
+
+<div class="content">
+    <ul class="content-tabs clearfix">
+        <li><a data-tab="#translator"><i class="fa fa-language"></i> Tradutor</a></li>
+        <li><a data-tab="#identifier"><i class="fa fa-globe"></i> Identificador</a></li>
+    </ul>
+    <div class="content-wrapper clearfix">
+        <div id="translator" class="clearfix tabbed-content">
+            <div class="input-container">
+                <label for="textToTranslate">Texto para traduzir</label>
+                <textarea name="textToTranslate" id="textToTranslate" rows="3" placeholder="Insira o texto que você quer traduzir"></textarea>
+            </div>
+            <div class="input-container col-6 left">
+                <label for="languageIn">Selecione o idioma de entrada</label>
+                <select id="languageIn" name="languageIn">
+                    <option value="en" class="english">Inglês</option>
+                    <option value="fr" class="french">Francês</option>
+                    <option value="es" class="spanish">Espanhol</option>
+                    <option value="pt" class="portuguese">Português</option>
+                    <option value="it" class="italian">Italiano</option>
+                </select>
+            </div>
+            <div class="input-container col-6 right">
+                <label for="languageOut">Selecione o idioma de saída</label>
+                <select id="languageOut" name="languageOut">
+                    <option value="it" class="italian">Italiano</option>
+                    <option value="pt" class="portuguese">Português</option>
+                    <option value="es" class="spanish">Espanhol</option>
+                    <option value="fr" class="french">Francês</option>
+                    <option value="en" class="english">Inglês</option>
+                </select>
+            </div>
+            <div class="button-container">
+                <button id="translate">Traduzir</button>
+            </div>
+
+            <div class="clearfix text-translated">
+                <label for="textTranslated">Texto traduzido</label>
+                <textarea name="textTranslated" id="textTranslated" rows="3" placeholder="" disabled></textarea>
+                <a class="view-json" data-target="translate">visualizar JSON</a>
+            </div>
+        </div>
+        <div id="identifier" class="clearfix tabbed-content">
+            <div class="input-container">
+                <label for="textToIdenfity">Insira um texto abaixo e o Watson irá identificar o idioma</label>
+                <textarea name="textToIdenfity" id="textToIdenfity" rows="3" placeholder="Insira o texto que você quer que o Watson analise"></textarea>
+            </div>
+            <div class="button-container">
+                <button id="identify">Identificar</button>
+            </div>
+
+            <div class="clearfix text-identified">
+                <h4 class="identify-result"></h4>
+                <a class="view-json" data-target="identify">visualizar JSON</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-fade-content translate">
+                <pre></pre>
+            </div>
+            <div class="modal-fade-content identify">
+                <pre></pre>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <small class="cr"></small>
+    </footer>
+</div>
+<script type="text/javascript" src="dist/js/client.min.js"></script>
+</body>
+</html>
