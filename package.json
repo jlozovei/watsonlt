@@ -23,7 +23,7 @@
   "homepage": "https://github.com/jlozovei/watsonlt#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "config": "^1.26.2",
+    "config": "^1.31.0",
     "ejs": "^2.5.7",
     "express": "^4.16.3",
     "font-awesome": "^4.7.0",
